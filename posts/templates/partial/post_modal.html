@@ -1,0 +1,27 @@
+<div class="modal fade" id="PostModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <form method="post" action="{% url 'post_create' %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Создание публикации</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="info">
+                        <div class="user">
+                            <div class="account-pic">
+                                <img src="{{ request.user.avatar.url }}" class="icon-round" alt="account-pic">
+                            </div>
+                            <p class="username">{{ request.user.username }}</p>
+                        </div>
+                    </div>
+                    {{ post_form.as_p }}
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Поделиться</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

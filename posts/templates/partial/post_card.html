@@ -1,0 +1,23 @@
+{% load static %}
+<div class="post">
+    <div class="info">
+        <a href="{% url 'account' post.author.pk %}">
+            {% include 'partial/user-link.html' with image=post.author.avatar.url author=post.author.username %}
+        </a>
+        <img src="{% static 'img/option.PNG' %}" class="options" alt="">
+    </div>
+    <img src="{{ post.image.url }}" class="post-image" alt="">
+    <div class="post-content">
+        {% include 'partial/reaction_part.html' %}
+        <p class="description"><span>{{ post.author.username }}</span>{{ post.text }}</p>
+        <p class="post-time">2 minutes ago</p>
+        <div class="description" style="cursor: pointer" data-bs-toggle="modal"
+             data-bs-target="#CommentModal{{ post.id }}">
+            Посмотреть все комментарии({{ post.comments.count }})
+        </div>
+    </div>
+    {% include 'partial/comments_modal.html' %}
+    <div class="comment-wrapper">
+        {% include 'partial/comment_form.html' %}
+    </div>
+</div>

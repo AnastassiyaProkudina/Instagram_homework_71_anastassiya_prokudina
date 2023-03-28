@@ -1,0 +1,45 @@
+{% load bootstrap_icons %}
+{% load static %}
+{% load django_bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="shortcut icon" href="{% static 'img/logo-colored.png' %}" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&family=Roboto+Flex:opsz,wght@8..144,300;8..144,400;8..144,500;8..144,600&family=Roboto+Serif:opsz,wght@8..144,100;8..144,300;8..144,400;8..144,500;8..144,700&family=Roboto:ital,wght@0,100;0,500;0,700;1,300&display=swap"
+          rel="stylesheet">
+    <title>{% block title %}Blog{% endblock %}</title>
+</head>
+<body>
+{% if request.user.is_authenticated %}
+    <nav class="navbar">
+        <div class="nav-wrapper">
+            <a href="{% url 'index' %}">
+                <img src="{% static 'img/logo.PNG' %}" class="brand-img" alt="logo">
+            </a>
+            {% include 'partial/user_search_form.html' %}
+            <div class="nav-items">
+                <a href="{% url 'index' %}" class="icon-house">
+                    <img src="{% static 'img/home.png' %}" alt="home" class="icon"
+                         style="height: 155%; margin-top: -2px">
+                </a>
+                <img src="{% static 'img/add.PNG' %}" class="icon" alt="add post" data-bs-toggle="modal"
+                     data-bs-target="#PostModal">
+                <a href="{% url 'account' request.user.pk %}">
+                    <img src="{{ request.user.avatar.url }}" class="icon-round avatar" alt="account">
+                </a>
+            </div>
+        </div>
+    </nav>
+    {% include 'partial/search_modal.html' %}
+    {% include 'partial/post_modal.html' %}
+    {% block content %}{% endblock %}
+{% else %}
+    {% include 'partial/login_part.html' %}
+{% endif %}
+</body>
+</html>

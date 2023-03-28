@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+    <section class="main">
+        <div class="wrapper">
+            <div class="account">
+                <div class="container d-flex justify-content-center align-items-center">
+                    <div class="logo-account">
+                        <img src="{{ user_obj.avatar.url }}" alt="account Image"
+                             class="logo-account-logo">
+                    </div>
+                    <div class="account-details">
+                        <div class="userName">
+                            <h4>{{ user_obj.username }}</h4>
+                            <a href="{% url 'change' user_obj.pk %}">
+                                <button type="button" class="btn btn-outline-dark">
+                                    Редактировать профиль
+                                </button>
+                            </a>
+                            <span>
+                                <svg aria-label="Options" class="_ab6-" data-bs-toggle="modal"
+                                     data-bs-target="#SettingsModal" color="#262626" fill="#262626"
+                                     height="24"
+                                     role="img" viewBox="0 0 24 24" width="24">
+                                    <circle cx="12" cy="12" fill="none" r="8.635" stroke="currentColor"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2"></circle>
+                                    <path d="M14.232 3.656a1.269 1.269 0 01-.796-.66L12.93 2h-1.86l-.505.996a1.269 1.269 0 01-.796.66m-.001 16.688a1.269 1.269 0 01.796.66l.505.996h1.862l.505-.996a1.269 1.269 0 01.796-.66M3.656 9.768a1.269 1.269 0 01-.66.796L2 11.07v1.862l.996.505a1.269 1.269 0 01.66.796m16.688-.001a1.269 1.269 0 01.66-.796L22 12.93v-1.86l-.996-.505a1.269 1.269 0 01-.66-.796M7.678 4.522a1.269 1.269 0 01-1.03.096l-1.06-.348L4.27 5.587l.348 1.062a1.269 1.269 0 01-.096 1.03m11.8 11.799a1.269 1.269 0 011.03-.096l1.06.348 1.318-1.317-.348-1.062a1.269 1.269 0 01.096-1.03m-14.956.001a1.269 1.269 0 01.096 1.03l-.348 1.06 1.317 1.318 1.062-.348a1.269 1.269 0 011.03.096m11.799-11.8a1.269 1.269 0 01-.096-1.03l.348-1.06-1.317-1.318-1.062.348a1.269 1.269 0 01-1.03-.096"
+                                          fill="none" stroke="currentColor" stroke-linejoin="round"
+                                          stroke-width="2"></path>
+                                </svg>
+                            </span>
+                        </div>
+                        {% include 'partial/settings_modal.html' %}
+                        <div class="account__account__details__follower my-3">
+                            <span><b>{{ posts_count }}</b> posts</span>
+                            <span><b>{{ followers_count }}</b> followers</span>
+                            <span><b>{{ following_count }}</b> following</span>
+                        </div>
+                        <div class="account-details">
+                            <h6>{{ user_obj.bio }}</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container" style="margin-left: 9%">
+        <div class="row">
+            {% for post in user_obj.posts.all %}
+                <div class="posts-card card col-md-4">
+                    <img src="{{ post.image.url }}" class="image-card card-img-top" alt="Post">
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

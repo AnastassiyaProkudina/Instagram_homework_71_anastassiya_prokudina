@@ -1,0 +1,14 @@
+{% load bootstrap_icons %}
+{% for search_account in search_accounts %}
+    {% if search_account %}
+        <div class="search-account-box">
+            <a href="{% url 'index' %}" class="close-search-modal">{% bs_icon 'x-circle-fill' %}</a>
+            <div class="info">
+                <a href="{% url 'account' search_account.pk %}">
+                    {% include 'partial/user-link.html' with image=search_account.avatar.url author=search_account.username %}
+                </a>
+            </div>
+        </div>
+    {% endif %}
+{% endfor %}
+

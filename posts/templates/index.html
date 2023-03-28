@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+    <section class="main">
+        <div class="wrapper">
+            <div class="left-col">
+                <div class="status-wrapper">
+                    {% for account in accounts %}
+                        <a href="{% url 'account' account.pk %}">
+                            <div class="status-card">
+                                <div class="profile-pic"><img src="{{ account.avatar.url }}" alt=""></div>
+                                <p class="username_">{{ account.username }}</p>
+                            </div>
+                        </a>
+                    {% endfor %}
+                </div>
+                {% for post in posts %}
+                    {% include 'partial/post_card.html' %}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

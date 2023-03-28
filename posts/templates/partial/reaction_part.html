@@ -1,0 +1,8 @@
+{% load static %}
+<div class="reaction-wrapper">
+    <img src="{% static 'img/like.PNG' %}" class="icon" alt="">
+    <img src="{% static 'img/comment.PNG' %}" class="icon" alt="">
+    <img src="{% static 'img/send.PNG' %}" class="icon" alt="">
+    <img src="{% static 'img/save.PNG' %}" class="save icon" alt="">
+</div>
+<p class="likes">{{ post.likes.count }} отметок "Нравится"</p>

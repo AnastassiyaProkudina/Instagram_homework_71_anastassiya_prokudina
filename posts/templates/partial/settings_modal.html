@@ -1,0 +1,12 @@
+<div class="modal fade" id="SettingsModal" tabindex="-1" aria-labelledby="SettingsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <form action="{% url 'logout' %}?next={{ request.get_full_path }}" method="post">
+                    {% csrf_token %}
+                    <input type="submit" class="btn btn-primary" value="Выйти">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

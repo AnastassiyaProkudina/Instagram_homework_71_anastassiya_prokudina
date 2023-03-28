@@ -1,0 +1,6 @@
+<form class="comment-f d-flex" method="post"
+      action="{% url 'comment_create' post.pk %}">
+    {% csrf_token %}
+    {{ comment_form.as_p }}
+    <button type="submit" value="comment" class="comment-btn">Опубликовать</button>
+</form>
