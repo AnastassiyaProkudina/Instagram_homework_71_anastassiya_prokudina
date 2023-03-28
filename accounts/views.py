@@ -102,5 +102,5 @@ class DeleteFollowView(LoginRequiredMixin, TemplateView):
         user = request.user
         follow = get_object_or_404(Account, pk=kwargs['pk'])
         obj = Account.object.get(pk=user.pk)
-        obj.delete_following(follow)
+        obj.following.remove(follow)
         return redirect('account', pk=kwargs['pk'])

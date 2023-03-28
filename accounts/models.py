@@ -56,10 +56,5 @@ class Account(AbstractUser):
     def add_following(self, following):
         return self.following.add(following)
 
-    def check_following(self, following):
-        if following in self.following.all():
-            return True
 
-    def delete_following(self, follow):
-        return self.following.remove(follow)
 
