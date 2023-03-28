@@ -2,7 +2,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout, get_user_model
 from django.contrib.auth.forms import UserChangeForm
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.shortcuts import redirect
+from django.shortcuts import redirect, get_object_or_404
 from django.urls import reverse
 from django.views.generic import (
     TemplateView,
@@ -11,7 +11,8 @@ from django.views.generic import (
     UpdateView,
 )
 
-from accounts.forms import LoginForm, CustomUserCreationForm
+from accounts.forms import LoginForm, CustomUserCreationForm, AddFollowForm
+from accounts.models import Account
 from posts.forms import PostForm
 
 
@@ -73,6 +74,7 @@ class AccountView(LoginRequiredMixin, DetailView):
         kwargs["followers_count"] = self.object.user_following.count()
         kwargs["following_count"] = self.object.following.count()
         kwargs["post_form"] = PostForm()
+
         return super().get_context_data(**kwargs)
 
 
@@ -83,4 +85,22 @@ class UserChangeView(UpdateView):
     context_object_name = "user_obj"
 
     def get_success_url(self):
-        return reverse("profile", kwargs={"pk": self.object.pk})
+        return reverse("account", kwargs={"pk": self.object.pk})
+
+
+class AddFollowView(LoginRequiredMixin, TemplateView):
+    def post(self, request, *args, **kwargs):
+        user = request.user
+        following = get_object_or_404(Account, pk=kwargs['pk'])
+        obj = Account.object.get(pk=user.pk)
+        obj.add_following(following)
+        return redirect('account', pk=kwargs['pk'])
+
+
+class DeleteFollowView(LoginRequiredMixin, TemplateView):
+    def post(self, request, *args, **kwargs):
+        user = request.user
+        follow = get_object_or_404(Account, pk=kwargs['pk'])
+        obj = Account.object.get(pk=user.pk)
+        obj.delete_following(follow)
+        return redirect('account', pk=kwargs['pk'])
