@@ -1,0 +1,89 @@
+[
+{
+  "model": "accounts.account",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$AlDqWknU1UVh70RecBpl4R$QoUQbgV1yErkXaGcw5xcL446l3F/NqAnJZfJ8UYMhkM=",
+    "last_login": "2023-03-28T12:42:50Z",
+    "is_superuser": true,
+    "username": "admin@admin.com",
+    "first_name": "Admin",
+    "last_name": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2023-03-27T10:17:53Z",
+    "email": "admin@admin.com",
+    "avatar": "user_pic/download.png",
+    "bio": "",
+    "phone": "",
+    "gender": "MALE",
+    "groups": [
+      1
+    ],
+    "user_permissions": [],
+    "liked_posts": [],
+    "following": [
+      6
+    ],
+    "commented_posts": []
+  }
+},
+{
+  "model": "accounts.account",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$TbmeYfV7vdvmg5xU7mMGVZ$GRyU0Wfkegg//uORM/hKy/1Nb3COHH/Q4HmjWp586EA=",
+    "last_login": "2023-03-28T11:52:59.064Z",
+    "is_superuser": false,
+    "username": "john_doe",
+    "first_name": "John",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-03-27T10:24:09Z",
+    "email": "john_doe@mail.com",
+    "avatar": "user_pic/Без_названия_NADlMi2.jpeg",
+    "bio": "",
+    "phone": "78798787564",
+    "gender": "MALE",
+    "groups": [],
+    "user_permissions": [],
+    "liked_posts": [
+      4,
+      5
+    ],
+    "following": [
+      1,
+      6
+    ],
+    "commented_posts": []
+  }
+},
+{
+  "model": "accounts.account",
+  "pk": 6,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$FUT1h4RZFfzwFDRFoY9A3B$f+TjwYohn8lPjB86PNKxoQmyPvLAAjE3EyLh8R9WPOw=",
+    "last_login": "2023-03-28T12:42:12.632Z",
+    "is_superuser": false,
+    "username": "root",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-03-28T11:52:49.175Z",
+    "email": "root@root.com",
+    "avatar": "user_pic/Без_названия_1_T0NfCSB.jpeg",
+    "bio": "",
+    "phone": "",
+    "gender": "",
+    "groups": [],
+    "user_permissions": [],
+    "liked_posts": [],
+    "following": [
+      2
+    ],
+    "commented_posts": []
+  }
+}
+]

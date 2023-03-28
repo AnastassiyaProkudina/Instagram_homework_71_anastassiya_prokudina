@@ -61,4 +61,5 @@ class Account(AbstractUser):
             return True
 
     def delete_following(self, follow):
-        return self.following.delete(follow)
+        return self.following.remove(follow)
+
