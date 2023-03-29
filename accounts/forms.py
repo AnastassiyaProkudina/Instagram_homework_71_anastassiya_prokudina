@@ -103,6 +103,3 @@ class AccountChangeForm(forms.ModelForm):
         model = get_user_model()
         fields = ["first_name", "last_name", "email"]
         labels = {"first_name": "Имя", "last_name": "Фамилия", "email": "Email"}
-
-
-

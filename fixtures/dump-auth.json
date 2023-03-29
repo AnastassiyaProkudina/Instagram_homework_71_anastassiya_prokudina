@@ -1,0 +1,189 @@
+[
+{
+  "model": "accounts.account",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$AlDqWknU1UVh70RecBpl4R$QoUQbgV1yErkXaGcw5xcL446l3F/NqAnJZfJ8UYMhkM=",
+    "last_login": "2023-03-28T23:04:39.959Z",
+    "is_superuser": true,
+    "username": "admin@admin.com",
+    "first_name": "Admin",
+    "last_name": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2023-03-27T10:17:53Z",
+    "email": "admin@admin.com",
+    "avatar": "user_pic/download.png",
+    "bio": "",
+    "phone": "",
+    "gender": "MALE",
+    "groups": [
+      1
+    ],
+    "user_permissions": [],
+    "liked_posts": [],
+    "following": [
+      6
+    ],
+    "commented_posts": []
+  }
+},
+{
+  "model": "accounts.account",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$TbmeYfV7vdvmg5xU7mMGVZ$GRyU0Wfkegg//uORM/hKy/1Nb3COHH/Q4HmjWp586EA=",
+    "last_login": "2023-03-29T00:17:08.944Z",
+    "is_superuser": false,
+    "username": "john_doe",
+    "first_name": "John",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-03-27T10:24:09Z",
+    "email": "john_doe@mail.com",
+    "avatar": "user_pic/john_doe.jpeg",
+    "bio": "",
+    "phone": "78798787564",
+    "gender": "MALE",
+    "groups": [
+      2
+    ],
+    "user_permissions": [],
+    "liked_posts": [
+      4,
+      5,
+      9,
+      17
+    ],
+    "following": [
+      1,
+      7,
+      11
+    ],
+    "commented_posts": []
+  }
+},
+{
+  "model": "accounts.account",
+  "pk": 6,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$FUT1h4RZFfzwFDRFoY9A3B$f+TjwYohn8lPjB86PNKxoQmyPvLAAjE3EyLh8R9WPOw=",
+    "last_login": "2023-03-28T12:42:12Z",
+    "is_superuser": false,
+    "username": "root",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-03-28T11:52:49Z",
+    "email": "root@mail.com",
+    "avatar": "user_pic/root.jpeg",
+    "bio": "",
+    "phone": "",
+    "gender": "",
+    "groups": [],
+    "user_permissions": [],
+    "liked_posts": [
+      12
+    ],
+    "following": [
+      2
+    ],
+    "commented_posts": []
+  }
+},
+{
+  "model": "accounts.account",
+  "pk": 7,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$X3VZ1P6zVWiIwzcOGS4V8C$jHaqAadDpDyzVvqjmZxl3o+WbIeA6+heHBwmz6Dcz7o=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "Lilu_23",
+    "first_name": "Lilu Five",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-03-28T21:19:21Z",
+    "email": "lilu_23@mail.com",
+    "avatar": "user_pic/lilu.jpeg",
+    "bio": "",
+    "phone": "786576476798",
+    "gender": "FEMALE",
+    "groups": [
+      2
+    ],
+    "user_permissions": [],
+    "liked_posts": [
+      12
+    ],
+    "following": [],
+    "commented_posts": []
+  }
+},
+{
+  "model": "accounts.account",
+  "pk": 8,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$ThaKQ0y5L7htXFAmWeYyv3$P+/ay93JChnbLEiMbU6uN6m8Uxpzzrm3MG+Y0dR7UAg=",
+    "last_login": "2023-03-29T00:12:01.598Z",
+    "is_superuser": false,
+    "username": "chris_tacker",
+    "first_name": "Chris Tacker",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-03-28T21:34:47Z",
+    "email": "chris_tacker@mail.com",
+    "avatar": "user_pic/cris.jpeg",
+    "bio": "",
+    "phone": "79867656545",
+    "gender": "MALE",
+    "groups": [
+      2
+    ],
+    "user_permissions": [],
+    "liked_posts": [
+      12
+    ],
+    "following": [
+      11,
+      6,
+      2
+    ],
+    "commented_posts": []
+  }
+},
+{
+  "model": "accounts.account",
+  "pk": 11,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$wJLJJyPm9W2MLIHX5GRANN$RwQ04tGShejxNuPEP8HreCzdDgkmes01ZYk2LONQSFo=",
+    "last_login": "2023-03-28T23:55:59.835Z",
+    "is_superuser": false,
+    "username": "plavalaguna",
+    "first_name": "Diva Plavalaguna",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-03-28T21:46:04Z",
+    "email": "plavalaguna@mail.com",
+    "avatar": "user_pic/Plavalaguna.jpeg",
+    "bio": "",
+    "phone": "",
+    "gender": "FEMALE",
+    "groups": [
+      2
+    ],
+    "user_permissions": [],
+    "liked_posts": [
+      8,
+      6,
+      7
+    ],
+    "following": [],
+    "commented_posts": []
+  }
+}
+]

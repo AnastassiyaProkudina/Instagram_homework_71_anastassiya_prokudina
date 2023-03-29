@@ -55,6 +55,3 @@ class Account(AbstractUser):
 
     def add_following(self, following):
         return self.following.add(following)
-
-
-

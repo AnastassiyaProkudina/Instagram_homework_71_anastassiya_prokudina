@@ -86,4 +86,3 @@ class UserChangeView(UpdateView):
 
     def get_success_url(self):
         return reverse("account", kwargs={"pk": self.object.pk})
-
