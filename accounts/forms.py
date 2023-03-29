@@ -79,6 +79,7 @@ class CustomUserCreationForm(forms.ModelForm):
         user.set_password(self.cleaned_data.get("password"))
         if commit:
             user.save()
+            user.groups.add(2)
         return user
 
 
@@ -104,7 +105,4 @@ class AccountChangeForm(forms.ModelForm):
         labels = {"first_name": "Имя", "last_name": "Фамилия", "email": "Email"}
 
 
-class AddFollowForm(forms.ModelForm):
-    class Meta:
-        model = get_user_model()
-        fields = ['following']
+

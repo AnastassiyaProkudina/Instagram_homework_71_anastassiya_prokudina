@@ -1,13 +1,8 @@
 from django.urls import path
 
-from accounts.views import (
-    LoginView,
-    logout_view,
-    RegisterView,
-    AccountView,
-    UserChangeView,
-    AddFollowView, DeleteFollowView,
-)
+from accounts.views import *
+from posts.views.follows import AddFollowView, DeleteFollowView
+from posts.views.likes import LikeView
 
 urlpatterns = [
     path("login/", LoginView.as_view(), name="login"),

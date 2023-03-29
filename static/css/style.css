@@ -588,10 +588,11 @@ body {
 .posts-card {
     max-height: 30%;
     max-width: 30%;
-    border: 1px solid black;
     border-radius: 0;
+    border: none;
     justify-content: center;
-    padding: 0
+    padding: 0;
+    margin: 2px;
 }
 
 .image-card {
@@ -602,4 +603,8 @@ body {
 .avatar {
     width: 30px;
     height: 30px
+}
+.like {
+    border: none;
+    background: inherit;
 }

@@ -58,9 +58,11 @@
     <div class="container" style="margin-left: 9%">
         <div class="row">
             {% for post in user_obj.posts.all %}
-                <div class="posts-card card col-md-4">
+                <div class="posts-card card col-md-4" data-bs-toggle="modal"
+             data-bs-target="#CommentModal{{ post.id }}">
                     <img src="{{ post.image.url }}" class="image-card card-img-top" alt="Post">
                 </div>
+                {% include 'partial/comments_modal.html' %}
             {% endfor %}
         </div>
     </div>

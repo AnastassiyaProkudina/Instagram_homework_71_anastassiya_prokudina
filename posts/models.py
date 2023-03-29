@@ -54,16 +54,16 @@ class Comment(models.Model):
         return self.text[:20]
 
 
-class Like(models.Model):
-    author = models.ForeignKey(
-        verbose_name="Автор",
-        to=get_user_model(),
-        related_name="likes",
-        on_delete=models.CASCADE,
-    )
-    post = models.ForeignKey(
-        verbose_name="Публикация",
-        to="posts.Post",
-        related_name="likes",
-        on_delete=models.CASCADE,
-    )
+# class Like(models.Model):
+#     author = models.ForeignKey(
+#         verbose_name="Автор",
+#         to=get_user_model(),
+#         related_name="likes",
+#         on_delete=models.CASCADE,
+#     )
+#     post = models.ForeignKey(
+#         verbose_name="Публикация",
+#         to="posts.Post",
+#         related_name="likes",
+#         on_delete=models.CASCADE,
+#     )

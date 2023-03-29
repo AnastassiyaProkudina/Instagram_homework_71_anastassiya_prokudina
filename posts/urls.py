@@ -2,6 +2,7 @@ from django.urls import path
 
 from posts.views.base import IndexView, IndexRedirectView
 from posts.views.comments import CommentCreateView
+from posts.views.likes import LikeView, DislikeView
 from posts.views.posts import PostCreateView
 
 urlpatterns = [
@@ -13,4 +14,6 @@ urlpatterns = [
         CommentCreateView.as_view(),
         name="comment_create",
     ),
+    path("post/<int:pk>/like", LikeView.as_view(), name="like"),
+    path("post/<int:pk>/dislike", DislikeView.as_view(), name="dislike"),
 ]

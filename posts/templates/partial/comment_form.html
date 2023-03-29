@@ -1,5 +1,5 @@
 <form class="comment-f d-flex" method="post"
-      action="{% url 'comment_create' post.pk %}">
+      action="{% url 'comment_create' post.pk %}?next={{ request.get_full_path }}">
     {% csrf_token %}
     {{ comment_form.as_p }}
     <button type="submit" value="comment" class="comment-btn">Опубликовать</button>

@@ -1,12 +1,11 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.messages.views import SuccessMessageMixin
 from django.views.generic import RedirectView, CreateView
 
 from posts.forms import PostForm
 from posts.models import Post
 
 
-class PostCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
+class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
     form_class = PostForm
 
