@@ -67,6 +67,7 @@ class CustomUserCreationForm(forms.ModelForm):
             visible.field.widget.attrs["class"] = "form-field"
             visible.label = ""
 
+
     def clean(self):
         cleaned_data = super().clean()
         password = cleaned_data.get("password")
