@@ -3,8 +3,8 @@
   "model": "accounts.account",
   "pk": 1,
   "fields": {
-    "password": "pbkdf2_sha256$390000$AlDqWknU1UVh70RecBpl4R$QoUQbgV1yErkXaGcw5xcL446l3F/NqAnJZfJ8UYMhkM=",
-    "last_login": "2023-03-28T23:04:39.959Z",
+    "password": "pbkdf2_sha256$600000$8Yp1K92DQc8Fo2qTcQeMO1$glWAhBXzDXpHP/A/7JEnSMfA+ZZUWraSP3TarAS2BoQ=",
+    "last_login": "2023-04-20T22:50:07.145Z",
     "is_superuser": true,
     "username": "admin@admin.com",
     "first_name": "Admin",
@@ -21,7 +21,6 @@
       1
     ],
     "user_permissions": [],
-    "liked_posts": [],
     "following": [
       6
     ],
@@ -32,8 +31,8 @@
   "model": "accounts.account",
   "pk": 2,
   "fields": {
-    "password": "pbkdf2_sha256$390000$TbmeYfV7vdvmg5xU7mMGVZ$GRyU0Wfkegg//uORM/hKy/1Nb3COHH/Q4HmjWp586EA=",
-    "last_login": "2023-04-19T02:53:28.126Z",
+    "password": "pbkdf2_sha256$600000$0gMRFWAuowab14c0NLOvxr$Fbue9aC/UH24/mRljo4QQoOyEi7IaCsb8h8PeHF5/RY=",
+    "last_login": "2023-04-21T07:33:25.366Z",
     "is_superuser": false,
     "username": "john_doe",
     "first_name": "John",
@@ -50,15 +49,6 @@
       2
     ],
     "user_permissions": [],
-    "liked_posts": [
-      4,
-      9,
-      13,
-      15,
-      12,
-      17,
-      16
-    ],
     "following": [
       1,
       7,
@@ -87,9 +77,6 @@
     "gender": "",
     "groups": [],
     "user_permissions": [],
-    "liked_posts": [
-      12
-    ],
     "following": [
       2
     ],
@@ -118,9 +105,6 @@
       2
     ],
     "user_permissions": [],
-    "liked_posts": [
-      12
-    ],
     "following": [],
     "commented_posts": []
   }
@@ -147,9 +131,6 @@
       2
     ],
     "user_permissions": [],
-    "liked_posts": [
-      12
-    ],
     "following": [
       11,
       6,
@@ -180,11 +161,6 @@
       2
     ],
     "user_permissions": [],
-    "liked_posts": [
-      8,
-      6,
-      7
-    ],
     "following": [],
     "commented_posts": []
   }
@@ -511,6 +487,78 @@
     "name": "Can view Профиль",
     "content_type": 9,
     "codename": "view_account"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 37,
+  "fields": {
+    "name": "Can add Token",
+    "content_type": 10,
+    "codename": "add_token"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 38,
+  "fields": {
+    "name": "Can change Token",
+    "content_type": 10,
+    "codename": "change_token"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 39,
+  "fields": {
+    "name": "Can delete Token",
+    "content_type": 10,
+    "codename": "delete_token"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 40,
+  "fields": {
+    "name": "Can view Token",
+    "content_type": 10,
+    "codename": "view_token"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 41,
+  "fields": {
+    "name": "Can add token",
+    "content_type": 11,
+    "codename": "add_tokenproxy"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 42,
+  "fields": {
+    "name": "Can change token",
+    "content_type": 11,
+    "codename": "change_tokenproxy"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 43,
+  "fields": {
+    "name": "Can delete token",
+    "content_type": 11,
+    "codename": "delete_tokenproxy"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 44,
+  "fields": {
+    "name": "Can view token",
+    "content_type": 11,
+    "codename": "view_tokenproxy"
   }
 },
 {

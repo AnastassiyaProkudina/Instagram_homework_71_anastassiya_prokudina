@@ -1,24 +1,13 @@
 [
 {
   "model": "posts.post",
-  "pk": 4,
-  "fields": {
-    "text": "Tashkent market",
-    "image": "posts/24B92C7E-E3E8-4486-8A5B-D13EE2E9F424_SXkiBqo.jpeg",
-    "author": 2,
-    "created_at": "2023-03-27T10:33:16.935Z",
-    "updated_at": "2023-03-27T10:33:16.935Z"
-  }
-},
-{
-  "model": "posts.post",
   "pk": 5,
   "fields": {
     "text": "tashkent market",
     "image": "posts/IMG_8777.jpeg",
-    "author": 2,
+    "author": 7,
     "created_at": "2023-03-27T10:33:59.185Z",
-    "updated_at": "2023-03-27T10:33:59.185Z"
+    "updated_at": "2023-04-21T00:37:03.088Z"
   }
 },
 {
@@ -132,6 +121,28 @@
   }
 },
 {
+  "model": "posts.post",
+  "pk": 18,
+  "fields": {
+    "text": "Tashkent Market",
+    "image": "posts/IMG_8777.jpeg",
+    "author": 2,
+    "created_at": "2023-04-20T23:00:23.434Z",
+    "updated_at": "2023-04-20T23:00:23.434Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 21,
+  "fields": {
+    "text": "ILorem",
+    "image": "posts/IMG_9969_yB01yIV.jpeg",
+    "author": 2,
+    "created_at": "2023-04-21T05:34:31.769Z",
+    "updated_at": "2023-04-21T05:34:31.769Z"
+  }
+},
+{
   "model": "posts.comment",
   "pk": 6,
   "fields": {
@@ -148,9 +159,9 @@
   "fields": {
     "author": 2,
     "post": 8,
-    "text": "eda",
+    "text": "Еда я люблю тебя!",
     "created_at": "2023-03-28T14:56:11.389Z",
-    "updated_at": "2023-03-28T14:56:11.389Z"
+    "updated_at": "2023-04-21T12:32:30.602Z"
   }
 },
 {
@@ -173,6 +184,84 @@
     "text": "Super!",
     "created_at": "2023-03-29T00:25:35.231Z",
     "updated_at": "2023-03-29T00:25:35.231Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 11,
+  "fields": {
+    "author": 2,
+    "post": 6,
+    "text": "вау",
+    "created_at": "2023-04-21T09:19:04.775Z",
+    "updated_at": "2023-04-21T09:19:04.775Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 12,
+  "fields": {
+    "author": 2,
+    "post": 13,
+    "text": "Hello",
+    "created_at": "2023-04-21T12:29:07.566Z",
+    "updated_at": "2023-04-21T12:29:07.566Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 3,
+  "fields": {
+    "author": 2,
+    "post": 5
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 4,
+  "fields": {
+    "author": 2,
+    "post": 8
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 5,
+  "fields": {
+    "author": 2,
+    "post": 13
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 6,
+  "fields": {
+    "author": 2,
+    "post": 9
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 7,
+  "fields": {
+    "author": 2,
+    "post": 12
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 8,
+  "fields": {
+    "author": 2,
+    "post": 18
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 10,
+  "fields": {
+    "author": 2,
+    "post": 13
   }
 }
 ]
