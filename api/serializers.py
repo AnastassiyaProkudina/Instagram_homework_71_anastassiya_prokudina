@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 from accounts.models import Account
-from posts.models import Post, Like
+from posts.models import Post, Like, Comment
 
 
 class PostSerializer(serializers.ModelSerializer):
@@ -23,11 +23,10 @@ class PostSerializer(serializers.ModelSerializer):
 
 
 class AccountSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = Account
         fields = ('id', 'email')
-        read_only_fields = ('email', )
+        read_only_fields = ('email',)
 
 
 class LikeSerializer(serializers.ModelSerializer):
@@ -43,3 +42,13 @@ class LikeSerializer(serializers.ModelSerializer):
     def create(self, validated_data, account=None):
         return Like.objects.create(**validated_data, author=self.author)
 
+
+class CommentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Comment
+        fields = ['id', 'author', 'post', 'text', 'created_at', 'updated_at']
+        read_only_fields = ['id', 'author', 'created_ad', 'updates_at', 'comments_count']
+
+    def create(self, validated_data, author=None):
+        comment = Comment.objects.create(**validated_data, author=self.author)
+        return comment
