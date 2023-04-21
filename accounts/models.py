@@ -23,13 +23,6 @@ class Account(AbstractUser):
     gender = models.CharField(
         verbose_name="Пол", choices=GenderChoice.choices, blank=True, max_length=40
     )
-
-    liked_posts = models.ManyToManyField(
-        verbose_name="Понравившиеся публикации",
-        to="posts.Post",
-        related_name="user_likes",
-        blank=True,
-    )
     following = models.ManyToManyField(
         verbose_name="Подписки",
         to="accounts.Account",

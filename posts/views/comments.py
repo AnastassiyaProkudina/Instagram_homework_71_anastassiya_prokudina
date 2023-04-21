@@ -16,6 +16,5 @@ class CommentCreateView(LoginRequiredMixin, CreateView):
         comment = form.save(commit=False)
         comment.post = post
         comment.author = self.request.user
-        print(comment)
         comment.save()
         return redirect("index")

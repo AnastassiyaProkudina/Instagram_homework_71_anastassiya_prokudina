@@ -7,7 +7,7 @@ from posts.views.posts import PostCreateView
 
 urlpatterns = [
     path("", IndexView.as_view(), name="index"),
-    path("article/", IndexRedirectView.as_view(), name="post_index_redirect"),
+    path("post/", IndexRedirectView.as_view(), name="post_index_redirect"),
     path("post/create", PostCreateView.as_view(), name="post_create"),
     path(
         "post/<int:pk>/comment/create",

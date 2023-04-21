@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     "django_bootstrap_icons",
     "posts",
     "accounts",
+    "rest_framework",
+    "rest_framework.authtoken",
+    "api",
 ]
 
 MIDDLEWARE = [
