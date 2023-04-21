@@ -1,6 +1,7 @@
 from rest_framework import serializers
 
-from posts.models import Post
+from accounts.models import Account
+from posts.models import Post, Like
 
 
 class PostSerializer(serializers.ModelSerializer):
@@ -21,15 +22,24 @@ class PostSerializer(serializers.ModelSerializer):
         return instance
 
 
-class PostSUpdateSerializer(serializers.ModelSerializer):
-    comments_count = serializers.IntegerField(default=0, read_only=True, source='comments.count')
+class AccountSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = Post
-        fields = ['id', 'text', 'image', 'author', 'created_at', 'updated_at', 'comments_count']
-        read_only_fields = ['id', 'image', 'author',  'created_ad', 'updates_at', 'comments_count']
+        model = Account
+        fields = ('id', 'email')
+        read_only_fields = ('email', )
 
-    def update(self, instance, validated_data):
-        instance.text = validated_data.get('text')
-        instance.save()
-        return instance
+
+class LikeSerializer(serializers.ModelSerializer):
+    post_text = serializers.CharField(read_only=True, source='post.text')
+    post_image = serializers.ImageField(read_only=True, source='post.image')
+    author = AccountSerializer(read_only=True)
+
+    class Meta:
+        model = Like
+        fields = ('id', 'author', 'post', 'post_text', 'post_image')
+        read_only_fields = ('id', 'author', 'post_text', 'post_image')
+
+    def create(self, validated_data, account=None):
+        return Like.objects.create(**validated_data, author=self.author)
+

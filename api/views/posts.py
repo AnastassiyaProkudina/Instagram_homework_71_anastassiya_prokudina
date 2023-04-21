@@ -5,7 +5,7 @@ from rest_framework.viewsets import ModelViewSet
 from rest_framework.response import Response
 
 from api.permissions import IsAllowed
-from api.serializers import PostSerializer, PostSUpdateSerializer
+from api.serializers import PostSerializer
 from posts.models import Post
 
 
@@ -24,9 +24,9 @@ class PostView(ModelViewSet):
 
     def put(self, request, pk, *args, **kwargs):
         instance = get_object_or_404(Post, pk=pk)
-        post_serializer = PostSUpdateSerializer(instance, data=request.data)
-        if post_serializer.is_valid():
-            post_serializer.save()
-            return Response(post_serializer.data, status=status.HTTP_200_OK)
+        _serializer = self.serializer_class(instance, data=request.data)
+        if _serializer.is_valid():
+            _serializer.save()
+            return Response(_serializer.data, status=status.HTTP_200_OK)
         else:
-            return Response(post_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response(_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
