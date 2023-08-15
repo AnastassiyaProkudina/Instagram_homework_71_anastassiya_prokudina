@@ -3,8 +3,8 @@
   "model": "accounts.account",
   "pk": 1,
   "fields": {
-    "password": "pbkdf2_sha256$600000$8Yp1K92DQc8Fo2qTcQeMO1$glWAhBXzDXpHP/A/7JEnSMfA+ZZUWraSP3TarAS2BoQ=",
-    "last_login": "2023-04-20T22:50:07.145Z",
+    "password": "pbkdf2_sha256$600000$XbKnigSHKiatTRu7HGetko$XivaxbWZheytF2OfQ0n1+yBnajN+3LWawPk62UsA0YQ=",
+    "last_login": "2023-05-05T16:14:04.511Z",
     "is_superuser": true,
     "username": "admin@admin.com",
     "first_name": "Admin",
@@ -32,7 +32,7 @@
   "pk": 2,
   "fields": {
     "password": "pbkdf2_sha256$600000$0gMRFWAuowab14c0NLOvxr$Fbue9aC/UH24/mRljo4QQoOyEi7IaCsb8h8PeHF5/RY=",
-    "last_login": "2023-04-21T07:33:25.366Z",
+    "last_login": "2023-08-15T09:42:48.946Z",
     "is_superuser": false,
     "username": "john_doe",
     "first_name": "John",
@@ -87,8 +87,8 @@
   "model": "accounts.account",
   "pk": 7,
   "fields": {
-    "password": "pbkdf2_sha256$390000$X3VZ1P6zVWiIwzcOGS4V8C$jHaqAadDpDyzVvqjmZxl3o+WbIeA6+heHBwmz6Dcz7o=",
-    "last_login": null,
+    "password": "pbkdf2_sha256$600000$uvE1q8yYbMpQe3fnSfe8xg$ssfhOKsqmPl95PXzyyxZUkSRa3kRkOJdrzc1MhH8oxA=",
+    "last_login": "2023-08-15T09:40:38.734Z",
     "is_superuser": false,
     "username": "Lilu_23",
     "first_name": "Lilu Five",
@@ -105,7 +105,9 @@
       2
     ],
     "user_permissions": [],
-    "following": [],
+    "following": [
+      11
+    ],
     "commented_posts": []
   }
 },
@@ -143,8 +145,8 @@
   "model": "accounts.account",
   "pk": 11,
   "fields": {
-    "password": "pbkdf2_sha256$390000$wJLJJyPm9W2MLIHX5GRANN$RwQ04tGShejxNuPEP8HreCzdDgkmes01ZYk2LONQSFo=",
-    "last_login": "2023-03-28T23:55:59.835Z",
+    "password": "pbkdf2_sha256$600000$B3j97lbQ7Uvjn3Kvo7Iynv$aDJuzvPm3QPckZZIA/30nFKwg6SdzaZG/zZX59SMTtA=",
+    "last_login": "2023-08-10T02:52:49.444Z",
     "is_superuser": false,
     "username": "plavalaguna",
     "first_name": "Diva Plavalaguna",
@@ -161,7 +163,9 @@
       2
     ],
     "user_permissions": [],
-    "following": [],
+    "following": [
+      8
+    ],
     "commented_posts": []
   }
 },

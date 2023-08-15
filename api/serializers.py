@@ -6,11 +6,12 @@ from posts.models import Post, Like, Comment
 
 class PostSerializer(serializers.ModelSerializer):
     comments_count = serializers.IntegerField(default=0, read_only=True, source='comments.count')
+    likes_count = serializers.IntegerField(default=0, read_only=True, source='likes.count')
 
     class Meta:
         model = Post
-        fields = ['id', 'text', 'image', 'author', 'created_at', 'updated_at', 'comments_count']
-        read_only_fields = ['id', 'author', 'created_ad', 'updates_at', 'comments_count']
+        fields = ['id', 'text', 'image', 'author', 'created_at', 'updated_at', 'comments_count', 'likes_count']
+        read_only_fields = ['id', 'author', 'created_ad', 'updates_at', 'comments_count', 'likes_count']
 
     def create(self, validated_data, author=None):
         return Post.objects.create(**validated_data, author=self.author)

@@ -1,23 +1,17 @@
 {% load static %}
 {% load bootstrap_icons %}
 <div class="reaction-wrapper">
-    {% if post in request.user.liked_posts.all %}
-        <form action="{% url 'dislike' post.pk %}" method="post">
-            {% csrf_token %}
-            <button class="like" type="submit">
-                <img src="{% static 'img/like-full.png' %}" class="icon" style="padding: 0;" alt="dislike">
-            </button>
-        </form>
-    {% else %}
-        <form action="{% url 'like' post.pk %}" method="post">
-            {% csrf_token %}
-            <button type="submit" class="like">
-                <img src="{% static 'img/like.PNG' %}" class="icon" alt="like">
-            </button>
-        </form>
-    {% endif %}
-    <img src="{% static 'img/comment.PNG' %}" class="icon" alt="">
-    <img src="{% static 'img/send.PNG' %}" class="icon" alt="">
-    <img src="{% static 'img/save.PNG' %}" class="save icon" alt="">
-</div>
-<p class="likes">{{ post.user_likes.count }} отметок "Нравится"</p>
+    <div class="like-{{ post.pk }} manage-likes" data-post="{{ post.pk }}" data-token="{{ csrf_token }}"
+         data-url="{% url "like" %}" data-like="{% static 'img/like.PNG' %}"
+         data-dislike="{% static 'img/like-full.png' %}">
+        <img src="{% if post.pk in user_likes %}
+                      {% static 'img/like-full.png' %}
+                  {% else %}
+                      {% static 'img/like.PNG' %}
+                  {% endif %}" class="icon" style="padding: 0;" alt="like">
+    </div>
+        <img src="{% static 'img/comment.PNG' %}" class="icon" alt="comment">
+        <img src="{% static 'img/send.PNG' %}" class="icon" alt="send">
+        <img src="{% static 'img/save.PNG' %}" class="save icon" alt="">
+    </div>
+    <p class="likes post-likes-count-{{ post.pk }}">{{ post.likes.count }} отметок "Нравится"</p>

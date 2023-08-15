@@ -5,7 +5,7 @@ from django.views.generic import RedirectView, TemplateView
 from accounts.models import Account
 from posts.forms import CommentForm, PostForm
 from accounts.forms import SearchForm, LoginForm
-from posts.models import Post
+from posts.models import Post, Like
 
 
 class IndexView(TemplateView):
@@ -44,6 +44,11 @@ class IndexView(TemplateView):
         context["post_form"] = PostForm()
         context["posts"] = Post.objects.all().order_by("-created_at")
         context["accounts"] = Account.objects.all()
+        user = self.request.user
+        if user.is_authenticated:
+            context["user_likes"] = Like.objects.filter(author=user).values_list("post_id", flat=True)
+        else:
+            context["user_likes"] = []
 
         if self.search_value:
             context["query"] = urlencode({"search": self.search_value})

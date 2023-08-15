@@ -1,10 +1,27 @@
 {% load static %}
+{% load bootstrap_icons %}
 <div class="post">
     <div class="info">
         <a href="{% url 'account' post.author.pk %}">
             {% include 'partial/user-link.html' with image=post.author.avatar.url author=post.author.username %}
         </a>
-        <img src="{% static 'img/option.PNG' %}" class="options" alt="">
+        {% if post.author == request.user %}
+            <div class="dropdown-center">
+                <div class="dropdown"
+                     role="button" data-bs-toggle="dropdown"
+                     aria-expanded="false">
+                    <img src="{% static 'img/option.PNG' %}" class="options" alt="options">
+                </div>
+                <ul class="dropdown-menu">
+                    <form method="POST" action="{% url 'post_delete' post.pk %}">
+                        {% csrf_token %}
+                        <li class="dropdown-item">
+                            <button style="border: none; background: none" type="submit">{% bs_icon 'trash3-fill' size='0.6em' extra_classes="fs-1 icon-l-nav" %}Удалить</button>
+                        </li>
+                    </form>
+                </ul>
+            </div>
+        {% endif %}
     </div>
     <img src="{{ post.image.url }}" class="post-image" alt="">
     <div class="post-content">

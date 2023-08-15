@@ -1,5 +1,6 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import RedirectView, CreateView
+from django.urls import reverse_lazy
+from django.views.generic import CreateView, DeleteView
 
 from posts.forms import PostForm
 from posts.models import Post
@@ -17,5 +18,21 @@ class PostCreateView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
-class IndexRedirectView(RedirectView):
-    pattern_name = "posts:index"
+class PostDeleteView(LoginRequiredMixin, DeleteView):
+    model = Post
+    template_name_suffix = ''
+
+    def get(self, request, *args, **kwargs):
+        return self.post(request, *args, **kwargs)
+
+    def get_success_url(self):
+        return reverse_lazy('index')
+
+
+# def json_like(request, id, *args, **kwargs):
+#     like = get_object_or_404(Like, post_id=id)
+#     if like:
+#         like.delete()
+#         return JsonResponse({'success': True, 'message': 'true', 'id': id})
+#     like.get_or_crete(Like(post_id=id))
+#     return JsonResponse({'success': True, 'message': 'false', 'id': id})

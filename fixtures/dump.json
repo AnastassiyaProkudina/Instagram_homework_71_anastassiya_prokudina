@@ -89,17 +89,6 @@
 },
 {
   "model": "posts.post",
-  "pk": 15,
-  "fields": {
-    "text": "",
-    "image": "posts/il_570xN.2719573899_1a7j.webp",
-    "author": 11,
-    "created_at": "2023-03-29T00:01:26.988Z",
-    "updated_at": "2023-03-29T00:01:26.988Z"
-  }
-},
-{
-  "model": "posts.post",
   "pk": 16,
   "fields": {
     "text": "",
@@ -140,6 +129,17 @@
     "author": 2,
     "created_at": "2023-04-21T05:34:31.769Z",
     "updated_at": "2023-04-21T05:34:31.769Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 27,
+  "fields": {
+    "text": "So me",
+    "image": "posts/scale_1200.webp",
+    "author": 7,
+    "created_at": "2023-08-15T09:41:33.303Z",
+    "updated_at": "2023-08-15T09:41:33.303Z"
   }
 },
 {
@@ -209,6 +209,28 @@
   }
 },
 {
+  "model": "posts.comment",
+  "pk": 13,
+  "fields": {
+    "author": 2,
+    "post": 8,
+    "text": "wow",
+    "created_at": "2023-05-05T16:12:25.760Z",
+    "updated_at": "2023-05-05T16:12:25.760Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 14,
+  "fields": {
+    "author": 11,
+    "post": 17,
+    "text": "Wow",
+    "created_at": "2023-08-10T04:40:12.526Z",
+    "updated_at": "2023-08-10T04:40:12.526Z"
+  }
+},
+{
   "model": "posts.like",
   "pk": 3,
   "fields": {
@@ -262,6 +284,126 @@
   "fields": {
     "author": 2,
     "post": 13
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 11,
+  "fields": {
+    "author": 2,
+    "post": 21
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 12,
+  "fields": {
+    "author": 2,
+    "post": 21
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 13,
+  "fields": {
+    "author": 2,
+    "post": 18
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 14,
+  "fields": {
+    "author": 2,
+    "post": 17
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 15,
+  "fields": {
+    "author": 2,
+    "post": 17
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 16,
+  "fields": {
+    "author": 2,
+    "post": 8
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 17,
+  "fields": {
+    "author": 2,
+    "post": 17
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 18,
+  "fields": {
+    "author": 2,
+    "post": 17
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 19,
+  "fields": {
+    "author": 2,
+    "post": 16
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 23,
+  "fields": {
+    "author": 11,
+    "post": 18
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 28,
+  "fields": {
+    "author": 11,
+    "post": 13
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 30,
+  "fields": {
+    "author": 11,
+    "post": 12
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 31,
+  "fields": {
+    "author": 11,
+    "post": 17
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 36,
+  "fields": {
+    "author": 11,
+    "post": 21
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 37,
+  "fields": {
+    "author": 7,
+    "post": 27
   }
 }
 ]
